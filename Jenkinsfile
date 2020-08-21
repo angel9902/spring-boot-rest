@@ -2,9 +2,9 @@
 pipeline {
  agent any
  stages {
-        stage('Checkout-git'){
+        stage('Example'){
                steps{
-		git poll: true, url: 'git@github.com:angel9902/spring-boot-rest.git'
+		  echo "Pipeline de Example"
                }
         }
   }
