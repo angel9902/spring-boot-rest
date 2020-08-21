@@ -2,9 +2,9 @@
 pipeline {
  agent any
  stages {
-        stage('Example'){
+        stage('Git-Clone'){
                steps{
-		  echo "Pipeline de Example"
+		  echo "Se obtiene el código fuente del proyecto de Spring-Boot-Rest."
                }
         }
   }
