@@ -10,7 +10,7 @@ pipeline {
 		  echo "Se obtiene el código fuente de manera correcta"
                }
         }
-	stage('Git-Clone'){
+	stage('Maven'){
 		steps{
 		   echo "Se ejecuta maven"
 			sh 'maven clean compile'
