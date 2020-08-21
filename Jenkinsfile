@@ -2,7 +2,7 @@
 pipeline {
  agent any
  tools { 
-        maven 'apache-maven-3.6.0' 
+        maven '/opt/maven3/bind:$PATH' 
         jdk 'jdk8' 
     }
  stages {
