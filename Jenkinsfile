@@ -25,7 +25,7 @@ pipeline {
 	stage('Maven'){
 		steps{
 		   echo "Se ejecuta maven"
-			sh 'mvn clean compile'
+			sh 'mvn --version'
 		}
 	}
   }
