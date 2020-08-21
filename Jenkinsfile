@@ -1,9 +1,8 @@
 // comment
 pipeline {
  agent any
- tools { 
-        maven '/opt/maven3/bind:$PATH' 
-        jdk 'jdk8' 
+ environment { 
+        PATH '/opt/maven3/bind:$PATH' 
     }
  stages {
 	 stage ('Initialize') {
