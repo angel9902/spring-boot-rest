@@ -13,7 +13,7 @@ pipeline {
 	stage('Maven'){
 		steps{
 		   echo "Se ejecuta maven"
-			sh 'clean compile'
+			sh 'maven clean compile'
 		}
 	}
   }
