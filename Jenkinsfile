@@ -4,7 +4,7 @@ pipeline {
  stages {
         stage('Checkout-git'){
                steps{
-		git poll: true, url: 'git@github.com:videocursoscloud/test-jenkins-1.git'
+		git poll: true, url: 'git@github.com:angel9902/spring-boot-rest.git'
                }
         }
   }
