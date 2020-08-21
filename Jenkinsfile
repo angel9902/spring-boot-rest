@@ -1,18 +1,11 @@
-// comment
 pipeline {
  agent any
- environment { 
-        PATH '/opt/maven3/bind:$PATH' 
-    }
+ 
+ tools {
+    maven 'M3'
+  }
+  
  stages {
-	 stage ('Initialize') {
-            steps {
-                sh '''
-                    echo "PATH = ${PATH}"
-                    echo "M2_HOME = ${M2_HOME}"
-                ''' 
-            }
-        }	 
         stage('Git-Clone'){
                steps{
 		  echo "Se obtiene el código fuente del proyecto de Spring-Boot-Rest"
@@ -21,12 +14,21 @@ pipeline {
 		  echo "Se obtiene el código fuente de manera correcta"
                }
         }
-	stage('Maven'){
-		steps{
-		   echo "Se ejecuta maven"
-			sh 'mvn --version'
-		}
-	}
+    	stage('Maven-Compile'){
+    		steps{
+    		   echo "Se inicia la compilación del código fuente"
+    			 sh 'mvn clean compile'
+    		   echo "Se compila correctamente el código fuente"	
+    		}
+    	}
+    /*	stage('Maven-Deploy'){
+    		steps{
+    		    echo "Se inicia el deploy del código fuente"
+    		        sh 'mvn clean deploy'
+    	    }
+    	}
+    */
+        
+    
   }
 }
-
